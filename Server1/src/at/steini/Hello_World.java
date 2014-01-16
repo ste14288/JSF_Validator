@@ -47,8 +47,37 @@ public class Hello_World extends HttpServlet {
 	        
 	        BufferedImage b = new BufferedImage(100, 200, BufferedImage.TYPE_INT_RGB);
 	        Graphics g = b.getGraphics();
-	        g.setColor(Color.YELLOW);
-	        g.fillOval(0, 7, 100, 100);
+	        //g.setColor(Color.YELLOW);
+	        //g.fillOval(0, 7, 100, 100);
+	        //g.fillRect(0, 5, 100, 100);
+	        
+	        switch ( (int) Math.random()*6) {
+			case 0:
+				g.fillOval(0, 7, 100, 100);
+				g.setColor(Color.GREEN);
+				break;
+			case 1:
+				g.fillOval(0, 7, 100, 100);
+				g.setColor(Color.YELLOW);
+				break;
+			case 2:
+				g.fillOval(0, 7, 100, 100);
+				g.setColor(Color.PINK);
+				break;
+			case 3:
+				g.fillRect(0, 7, 100, 100);
+				g.setColor(Color.GREEN);
+				break;
+			case 4:
+				g.fillRect(0, 7, 100, 100);
+				g.setColor(Color.YELLOW);
+				break;
+			case 5:
+				g.fillRect(0, 7, 100, 100);
+				g.setColor(Color.RED);
+				break;
+
+			}
 	        g.dispose();
 	        ImageIO.write(b, "jpeg", response.getOutputStream());
 	}
