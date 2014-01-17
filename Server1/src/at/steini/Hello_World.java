@@ -1,3 +1,4 @@
+
 package at.steini;
 
 import java.awt.Color;
@@ -5,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -45,36 +47,46 @@ public class Hello_World extends HttpServlet {
 //	        out.println("</body>");
 //	        out.println("</html>");
 	        
-	        BufferedImage b = new BufferedImage(100, 200, BufferedImage.TYPE_INT_RGB);
+	        BufferedImage b = new BufferedImage(200, 200, BufferedImage.TYPE_INT_RGB);
 	        Graphics g = b.getGraphics();
 	        //g.setColor(Color.YELLOW);
 	        //g.fillOval(0, 7, 100, 100);
 	        //g.fillRect(0, 5, 100, 100);
-	        
-	        switch ( (int) Math.random()*6) {
+	        Random r = new Random();
+	        switch (r.nextInt(6)+1) {
 			case 0:
-				g.fillOval(0, 7, 100, 100);
 				g.setColor(Color.GREEN);
+				g.fillOval(0, 7, 100, 100);
 				break;
 			case 1:
-				g.fillOval(0, 7, 100, 100);
 				g.setColor(Color.YELLOW);
+				g.fillOval(0, 7, 100, 100);
+				
 				break;
 			case 2:
-				g.fillOval(0, 7, 100, 100);
 				g.setColor(Color.PINK);
+				g.fillOval(0, 7, 100, 100);
+				
 				break;
 			case 3:
-				g.fillRect(0, 7, 100, 100);
 				g.setColor(Color.GREEN);
+				g.fillRect(0, 7, 100, 100);
+				
 				break;
 			case 4:
-				g.fillRect(0, 7, 100, 100);
 				g.setColor(Color.YELLOW);
+				g.fillRect(0, 7, 100, 100);
+				
 				break;
 			case 5:
-				g.fillRect(0, 7, 100, 100);
 				g.setColor(Color.RED);
+				g.fillRect(0, 7, 100, 100);
+				
+				break;
+			case 6:
+				g.setColor(Color.GREEN);
+				g.fillRect(0, 7, 100, 100);
+				
 				break;
 
 			}
